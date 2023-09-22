@@ -3,24 +3,25 @@
 //chama biblioteca
 const bodyParser = require('body-parser');
 const express = require('express');
+//chama arquivo
+const routes = require("./routes/index.routes");
+
 //inicia a biblioteca (objeto)
 const app = new express();
 //converter json para objeto
 app.use(bodyParser.json());
+app.use(routes);
 //Criando rotas 
 app.get("/alunos", (request, response) => {
     response.send("Alunos");
 })
-//Criando rotas 
-app.get("/professores", (request, response) => {
-    response.send("professores");
-})
+
 //Criando rotas 
 app.get("/soma", (request, response) => {
     var valor1 = 10;
     var valor2 = 10;
     var resultado = valor1 + valor2;
-    response.send(`O resultado é: ${ resultado}`);
+    response.send(`O resultado é: ${resultado}`);
 })
 //acessar porta e na segunda parte comunica se a porta do servidor esta sendo usado 
 app.listen(8080, () =>
