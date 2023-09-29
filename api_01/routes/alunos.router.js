@@ -1,6 +1,7 @@
 const express = require("express");
+const { lestaAlunos } = require("../controllerr/alunos.controller");
 const routes = express.Router();
-
+routes.get("/",lestaAlunos);
 routes.get("/alunos", (request, response) => {
     response.send("Alunos");
 });
