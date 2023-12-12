@@ -1,22 +1,25 @@
-create database bancoDedados;
+create database banquinho;
 
-create table bancoDedados.usuario(
-    IDusuario INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(255) NOT NULL,
-    user_Name VARCHAR(255) NOT NULL,
-    senha VARCHAR(255) NOT NULL,
-    email VARCHAR(255),
-    atribuicao_ID INT FOREIGN KEY
+CREATE TABLE `alunos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  `idade` int(11) NOT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 );
 
-create table bancoDedados.atribuicao(
-    atribuicaoID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    descricao VARCHAR(255),
-    status BOOLEAN DEFAULT(1) NOT NULL
+
+CREATE TABLE `professor` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  `estado` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
 );
 
-create TABLE bancoDedados.recuperar_senha(
-    recuperacao_ID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    chave VARCHAR(255),
-    usuario_ID INT FOREIGN KEY
-);
+INSERT INTO apiDB.alunos (id, nome, idade, email) VALUES(1, 'jeancarlosOhomem', 17, NULL);
+INSERT INTO apiDB.alunos (id, nome, idade, email) VALUES(2, 'Jeancarlos', 18, NULL);
+INSERT INTO apiDB.alunos (id, nome, idade, email) VALUES(3, 'tobias', 10, NULL);
+INSERT INTO apiDB.alunos (id, nome, idade, email) VALUES(4, 'mateus', 26, NULL);
+INSERT INTO apiDB.alunos (id, nome, idade, email) VALUES(5, 'douglas', 66, NULL);
+
+INSERT INTO apiDB.professor (id, nome, estado) VALUES(1, 'GuilhermePira', 'so Dando Aula ou Seja desempregado');
